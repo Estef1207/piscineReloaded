@@ -9,22 +9,29 @@
 /*   Updated: 2024/09/17 11:44:02 by esmeza-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <string.h>
-#include <stdio.h> */
+
+/*#include <stdio.h>*/
 #include <stdlib.h>
 
 char	*ft_strdup(char *src)
 {
 	char	*copy;
 	int		len;
+	int		i;
 
-	len = strlen(src) + 1;
-	copy =(char *) malloc(len * sizeof(char));
+	i = 0;
+	len = 0;
+	while (src[len])
+		len++;
+	copy = (char *)malloc(len * sizeof(copy));
 	if (copy == NULL)
 		return (0);
-	else
-		strcpy(copy, src);
+	while (src[i])
+	{
+		copy[i] = src[i];
+		i++;
+	}
+	copy[i] = 0;
 	return (copy);
 }
 /*
